@@ -1,15 +1,15 @@
-"# CodeGuard" 
+----------CodeGuard---------- 
 
-#Prerequisites
+Prerequisites
 - Python 3.10+
 - pip
 
-#Installation 
+Installation 
 - python -m venv .venv
 - source venv\Scripts\activate
 - pip install -r requirements.txt
 
-#running
+running
  - python main.py
 
 
