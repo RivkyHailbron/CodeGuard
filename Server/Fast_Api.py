@@ -7,8 +7,8 @@ from fastapi import FastAPI, UploadFile,File
 from fastapi.responses import FileResponse ,JSONResponse,HTMLResponse
 from pydantic import BaseModel
 
-from Services.AnalyseService import analyze_file, save_analysis, combine_results
-from Services.GraghAnalyseService import Histogram, Pie_Chart, Bar_Chart
+from Services.AnalyseService import analyze_file, save_analysis, combine_results, load_results_from_json
+from Services.GraghAnalyseService import Histogram, Pie_Chart, Bar_Chart, Line_Graph
 
 app = FastAPI()
 app.mount("/GraghsPng", StaticFiles(directory="GraghsPng"), name="graphs")
@@ -30,6 +30,7 @@ async def analyze(files: List[UploadFile] = File(...)):
     Histogram(combine["function_lengths"])
     Pie_Chart(combine , len(files))
     Bar_Chart(results)
+    Line_Graph(load_results_from_json())
 
     return JSONResponse(content={
         "message": "Analysis completed",
@@ -53,91 +54,83 @@ async def show_graphs():
     <html>
         <head>
             <style>
-                body {
+                html, body {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
                     font-family: Arial, sans-serif;
                     background-color: #f7f7f7;
-                    text-align: center;
-                    padding: 30px;
-                    margin: 0;
+                    overflow: hidden;
                 }
                 h1 {
                     color: #333;
-                    margin-bottom: 40px;
+                    margin: 10px 0;
+                    text-align: center;
                 }
-                .graphs-container {
-                    display: flex;
-                    justify-content: center;
-                    gap: 20px;
-                    flex-wrap: nowrap;
-                    overflow-x: hidden;
+                .grid-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    height: calc(100vh - 60px);
+                    gap: 10px;
+                    padding: 10px;
+                    box-sizing: border-box;
                 }
                 .graph-item {
-                    flex: 1 1 20%;
-                    max-width: 22%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 12px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                    background: white;
                 }
                 .graph-item img {
                     width: 100%;
-                    height: auto;
-                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                    border-radius: 10px;
-                    user-select: none;
+                    height: 100%;
+                    object-fit: contain;
+                    display: block;
                 }
                 .download-btn {
-                    margin-top: 10px;
-                    background-color: #4CAF50;
-                    border: none;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    background-color: rgba(76, 175, 80, 0.9);
                     color: white;
-                    padding: 8px 16px;
+                    padding: 6px 12px;
+                    border-radius: 6px;
                     font-size: 14px;
-                    border-radius: 5px;
-                    cursor: pointer;
                     text-decoration: none;
-                    display: inline-block;
                     transition: background-color 0.3s ease;
                 }
                 .download-btn:hover {
-                    background-color: #45a049;
+                    background-color: rgba(56, 142, 60, 0.95);
                 }
 
-                /* למובייל: מציג 2 גרפים בשורה */
-                @media (max-width: 800px) {
-                    .graphs-container {
-                        flex-wrap: wrap;
-                    }
-                    .graph-item {
-                        max-width: 45%;
-                        margin-bottom: 20px;
-                    }
-                }
-                /* למובייל קטן: גרף אחד בשורה */
-                @media (max-width: 450px) {
-                    .graph-item {
-                        max-width: 90%;
+                @media (max-width: 768px) {
+                    .grid-container {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: repeat(4, 1fr);
                     }
                 }
             </style>
         </head>
         <body>
-            <h1>Graphs</h1>
-            <div class="graphs-container">
+            <h1>All Graphs</h1>
+            <div class="grid-container">
                 <div class="graph-item">
-                    <img src="/GraghsPng/histogram.png" alt="Histogram"/>
-                    <a href="/GraghsPng/histogram.png" download class="download-btn">הורד תמונה</a>
+                    <img src="/GraghsPng/histogram.png" alt="Histogram">
+                    <a href="/GraghsPng/histogram.png" download class="download-btn">הורד</a>
                 </div>
                 <div class="graph-item">
-                    <img src="/GraghsPng/pie_chart.png" alt="Pie Chart"/>
-                    <a href="/GraghsPng/pie_chart.png" download class="download-btn">הורד תמונה</a>
+                    <img src="/GraghsPng/pie_chart.png" alt="Pie Chart">
+                    <a href="/GraghsPng/pie_chart.png" download class="download-btn">הורד</a>
                 </div>
                 <div class="graph-item">
-                    <img src="/GraghsPng/IssuesBarChart.png" alt="Bar Chart"/>
-                    <a href="/GraghsPng/IssuesBarChart.png" download class="download-btn">הורד תמונה</a>
+                    <img src="/GraghsPng/IssuesBarChart.png" alt="Bar Chart">
+                    <a href="/GraghsPng/IssuesBarChart.png" download class="download-btn">הורד</a>
                 </div>
                 <div class="graph-item">
-                    <img src="/GraghsPng/line_graph.png" alt="Line Graph"/>
-                    <a href="/GraghsPng/line_graph.png" download class="download-btn">הורד תמונה</a>
+                    <img src="/GraghsPng/line_graph.png" alt="Line Graph">
+                    <a href="/GraghsPng/line_graph.png" download class="download-btn">הורד</a>
                 </div>
             </div>
         </body>

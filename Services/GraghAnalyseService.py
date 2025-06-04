@@ -7,6 +7,7 @@ from Models.FileAnanyzerResult import FileAnalysisResult
 matplotlib.use('Agg')  # backend ללא GUI
 import matplotlib.pyplot as plt
 import numpy as np
+from datetime import datetime
 
 #Distribution of function lengths
 def Histogram(function_lengths: List[int]):
@@ -46,24 +47,32 @@ def Bar_Chart(list_of_results: List[FileAnalysisResult]):
     plt.savefig('./GraghsPng/IssuesBarChart.png')
     plt.close()
 
-#consider implementing a line graph to track the number of issues over time.
-def Line_Graph(timed_results: list[tuple[str, int]]):
-    """
-    timed_results: List of tuples [(timestamp, issue_count)]
-    """
-    plt.clf()
-    timestamps = [t for (t, _) in timed_results]
-    issues = [i for (_, i) in timed_results]
+#Creates a line graph showing total issues over time.
+def Line_Graph(results: list[FileAnalysisResult]):
 
-    plt.plot(timestamps, issues, marker='o', linestyle='-', color='green')
+    # יצירת רשימת זמנים ומספר בעיות בכל אחד
+    timed_data = []
+    for res in results:
+        total_issues = res.long_functions + res.unused_vars + res.missing_docstrings + (res.total_lines>200)
+        time = datetime.fromisoformat(res.timestamp)
+        timed_data.append((time, total_issues))
+
+    # מיון לפי זמן
+    timed_data.sort(key=lambda x: x[0])
+
+    times = [t.strftime("%Y-%m-%d %H:%M") for t, _ in timed_data]
+    issues = [i for _, i in timed_data]
+
+    plt.clf()
+    plt.figure(figsize=(10, 5))
+    plt.plot(times, issues, marker='o', linestyle='-', color='green')
     plt.title('Issues Over Time')
     plt.xlabel('Timestamp')
     plt.ylabel('Number of Issues')
-    plt.xticks(rotation=45, ha='right')
+    plt.xticks(rotation=90, ha='right')
     plt.tight_layout()
-    plt.savefig('./GraghsPng/IssuesOverTime.png')
+    plt.savefig('./GraghsPng/line_graph.png')
     plt.close()
-
 
 
 

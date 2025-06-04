@@ -1,5 +1,6 @@
 import json
 import ast
+from datetime import datetime
 from typing import List
 
 
@@ -105,13 +106,14 @@ def analyze_file(file_name, code):
     print(f"missing_docstrings: {missing_docstrings}")
 
     return FileAnalysisResult(
-        file_name =file_name,
+        file_name=file_name,
         total_lines=total_lines,
         num_functions=len(function_lengths),
-        function_lengths = function_lengths,
+        function_lengths=function_lengths,
         long_functions=long_functions,
         unused_vars=len(unused_vars),
-        missing_docstrings=missing_docstrings
+        missing_docstrings=missing_docstrings,
+        timestamp=datetime.now().isoformat()
     )
 
 def save_analysis(result: FileAnalysisResult):
@@ -126,3 +128,11 @@ def save_analysis(result: FileAnalysisResult):
 
     with open("analysis_log.json", "w") as f:
         json.dump(data, f, indent=2)
+
+def load_results_from_json(path="analysis_log.json"):
+    try:
+        with open(path, "r") as f:
+            raw_data = json.load(f)
+        return [FileAnalysisResult(**d) for d in raw_data]
+    except FileNotFoundError:
+        return []

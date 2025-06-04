@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="analyze + alerts + GUI works">
+    <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="GUI + STYLE + DOWNLOAD GRAPH">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Fast_Api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Fast_Api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/AnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AnalyseService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/GraghAnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/GraghAnalyseService.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +138,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1749038263796</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎-00010" summary="GUI + STYLE + DOWNLOAD GRAPH">
+      <option name="closed" value="true" />
+      <created>1749038534766</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1749038534766</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -142,6 +154,7 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="add requirements.txt" />
     <MESSAGE value="analyze + alerts + GUI works" />
-    <option name="LAST_COMMIT_MESSAGE" value="analyze + alerts + GUI works" />
+    <MESSAGE value="GUI + STYLE + DOWNLOAD GRAPH" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI + STYLE + DOWNLOAD GRAPH" />
   </component>
 </project>
