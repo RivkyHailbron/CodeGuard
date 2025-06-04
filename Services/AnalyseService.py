@@ -1,23 +1,33 @@
-import ast
 import json
-from Models.FileAnalysistResult import FileAnalysisResult
+import ast
+from typing import List
 
 
-def save_analysis(result: FileAnalysisResult):
-        try:
-            with open("analysis_log.json", "r") as f:
-                data = json.load(f)
-        except FileNotFoundError:
-            data = []
+from Models.FileAnanyzerResult import FileAnalysisResult
 
-        data.append(result.to_dict())
-
-        with open("analysis_log.json", "w") as f:
-            json.dump(data, f, indent=2)
-
+def combine_results(results: List[FileAnalysisResult]):
+    combined_results = {
+        "function_lengths": [],
+        "total_lines": 0,
+        "long_functions": 0,
+        "missing_docstrings": 0,
+        "unused_vars": 0
+    }
+    for result in results:
+        # צבירת נתונים לכל הקבצים
+        combined_results["function_lengths"].extend(result.function_lengths)
+        combined_results["total_lines"] += result.total_lines
+        combined_results["long_functions"] += result.long_functions
+        combined_results["missing_docstrings"] += result.missing_docstrings
+        combined_results["unused_vars"] += result.unused_vars
+    return combined_results
 
 
 def analyze_file(file_name, code):
+    #if not python file
+    if not file_name.endswith(".py"):
+        raise ValueError("Only .py files are supported")
+
     tree = ast.parse(code)
     lines = code.splitlines()
     total_lines = len(lines)
@@ -44,7 +54,7 @@ def analyze_file(file_name, code):
             return self.scopes[-1] if self.scopes else None
 
         def visit_FunctionDef(self, node):
-            print(f"funcName {node.name}")
+            print(f"func name {node.name}")
             nonlocal missing_docstrings
             self.push_scope()
 
@@ -68,11 +78,14 @@ def analyze_file(file_name, code):
             if scope:
                 if isinstance(node.ctx, ast.Store):
                     scope['assigned'].add(node.id)
+                    print(f"assigned var {node.id} ")
                 elif isinstance(node.ctx, ast.Load):
                     scope['used'].add(node.id)
             else:
                 if isinstance(node.ctx, ast.Store):
                     assigned_vars.add(node.id)
+                    print(f"assigned var {node.id} ")
+
                 elif isinstance(node.ctx, ast.Load):
                     used_vars.add(node.id)
             self.generic_visit(node)
@@ -83,18 +96,26 @@ def analyze_file(file_name, code):
     unused_vars.update(assigned_vars - used_vars)
 
     long_functions = sum(1 for l in function_lengths if l > 20)
+    print("##############################" + file_name)
+    print(f"file_name: {file_name}")
+    print(f"total_lines: {total_lines}")
+    print(f"num_functions: {len(function_lengths)}")
+    print(f"long_functions: {long_functions}")
+    print(f"unused_vars: {unused_vars}")
+    print(f"missing_docstrings: {missing_docstrings}")
 
     return FileAnalysisResult(
-        file_name=file_name,
+        file_name =file_name,
         total_lines=total_lines,
         num_functions=len(function_lengths),
-        function_lengths=function_lengths,
+        function_lengths = function_lengths,
         long_functions=long_functions,
         unused_vars=len(unused_vars),
         missing_docstrings=missing_docstrings
     )
 
 def save_analysis(result: FileAnalysisResult):
+
     try:
         with open("analysis_log.json", "r") as f:
             data = json.load(f)
@@ -105,20 +126,3 @@ def save_analysis(result: FileAnalysisResult):
 
     with open("analysis_log.json", "w") as f:
         json.dump(data, f, indent=2)
-
-def  combined_results(results:list[FileAnalysisResult]):
-    combined = {
-        "function_lengths": [],
-        "total_lines": 0,
-        "long_functions": 0,
-        "missing_docstrings": 0,
-        "unused_vars": 0
-    }
-    for result in results:
-        combined["function_lengths"].extend(result.function_lengths)
-        combined["total_lines"] += result.total_lines
-        combined["long_functions"] += result.long_functions
-        combined["missing_docstrings"] += result.missing_docstrings
-        combined["unused_vars"] += result.unused_vars
-
-    return combined
