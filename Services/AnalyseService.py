@@ -1,8 +1,33 @@
 import json
 import ast
+from typing import List
+
+
 from Models.FileAnanyzerResult import FileAnalysisResult
 
+def combine_results(results: List[FileAnalysisResult]):
+    combined_results = {
+        "function_lengths": [],
+        "total_lines": 0,
+        "long_functions": 0,
+        "missing_docstrings": 0,
+        "unused_vars": 0
+    }
+    for result in results:
+        # צבירת נתונים לכל הקבצים
+        combined_results["function_lengths"].extend(result.function_lengths)
+        combined_results["total_lines"] += result.total_lines
+        combined_results["long_functions"] += result.long_functions
+        combined_results["missing_docstrings"] += result.missing_docstrings
+        combined_results["unused_vars"] += result.unused_vars
+    return combined_results
+
+
 def analyze_file(file_name, code):
+    #if not python file
+    if not file_name.endswith(".py"):
+        raise ValueError("Only .py files are supported")
+
     tree = ast.parse(code)
     lines = code.splitlines()
     total_lines = len(lines)
@@ -29,6 +54,7 @@ def analyze_file(file_name, code):
             return self.scopes[-1] if self.scopes else None
 
         def visit_FunctionDef(self, node):
+            print(f"func name {node.name}")
             nonlocal missing_docstrings
             self.push_scope()
 
@@ -52,11 +78,14 @@ def analyze_file(file_name, code):
             if scope:
                 if isinstance(node.ctx, ast.Store):
                     scope['assigned'].add(node.id)
+                    print(f"assigned var {node.id} ")
                 elif isinstance(node.ctx, ast.Load):
                     scope['used'].add(node.id)
             else:
                 if isinstance(node.ctx, ast.Store):
                     assigned_vars.add(node.id)
+                    print(f"assigned var {node.id} ")
+
                 elif isinstance(node.ctx, ast.Load):
                     used_vars.add(node.id)
             self.generic_visit(node)
@@ -79,12 +108,14 @@ def analyze_file(file_name, code):
         file_name =file_name,
         total_lines=total_lines,
         num_functions=len(function_lengths),
+        function_lengths = function_lengths,
         long_functions=long_functions,
         unused_vars=len(unused_vars),
         missing_docstrings=missing_docstrings
     )
 
 def save_analysis(result: FileAnalysisResult):
+
     try:
         with open("analysis_log.json", "r") as f:
             data = json.load(f)

@@ -10,6 +10,7 @@
 - pip install -r requirements.txt
 
 ## **running**
- - python main.py
+ - uvicorn Server.Fast_Api:app --port 8001
+
 
 

@@ -2,5 +2,6 @@
 fastapi
 uvicorn
 matplotlib
+numpy
 pydantic
 python-multipart

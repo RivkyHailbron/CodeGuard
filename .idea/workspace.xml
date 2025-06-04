@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="add requirements.txt">
-      <change afterPath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/AnalyseService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/__init__.py" afterDir="false" />
+    <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="analyze working&#10;post &quot;analyze&quot; all work!">
+      <change afterPath="$PROJECT_DIR$/Services/GraghAnalyseService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Fast_Api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Fast_Api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/AnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AnalyseService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis_log.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +40,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.GraghAnalyseService.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user1\Documents\לימודים\PYTHON\CodeGuard\GraghsPng" />
+      <recent name="C:\Users\user1\Documents\לימודים\PYTHON\CodeGuard" />
+      <recent name="C:\Users\user1\Documents\לימודים\PYTHON\CodeGuard\Services\GraghsPng" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
