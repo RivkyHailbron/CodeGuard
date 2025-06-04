@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="add requirements.txt">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="analyze working&#10;post &quot;analyze&quot; all work!">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/AnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AnalyseService.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +127,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1748977818398</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎-00010" summary="analyze working&#10;post &quot;analyze&quot; all work!">
+      <option name="closed" value="true" />
+      <created>1748978172034</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748978172034</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

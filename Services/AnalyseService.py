@@ -68,12 +68,12 @@ def analyze_file(file_name, code):
 
     long_functions = sum(1 for l in function_lengths if l > 20)
     print("##############################" + file_name)
-    print(f"file_name: {file_name}")
-    print(f"total_lines: {total_lines}")
-    print(f"num_functions: {len(function_lengths)}")
-    print(f"long_functions: {long_functions}")
-    print(f"unused_vars: {unused_vars}")
-    print(f"missing_docstrings: {missing_docstrings}")
+    # print(f"file_name: {file_name}")
+    # print(f"total_lines: {total_lines}")
+    # print(f"num_functions: {len(function_lengths)}")
+    # print(f"long_functions: {long_functions}")
+    # print(f"unused_vars: {unused_vars}")
+    # print(f"missing_docstrings: {missing_docstrings}")
 
     return FileAnalysisResult(
         file_name =file_name,
