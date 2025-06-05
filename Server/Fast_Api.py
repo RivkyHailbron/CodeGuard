@@ -1,5 +1,4 @@
-
-
+import time
 from http.client import HTTPException
 from typing import List
 from fastapi.staticfiles import StaticFiles
@@ -9,12 +8,12 @@ from fastapi import FastAPI, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
 from pydantic import BaseModel
 
-from Services.AnalyseService import analyze_file, save_analysis, combine_results
-from Services.GraghAnalyseService import Histogram, Pie_Chart, Bar_Chart
-
+from Services.AnalyseService import analyze_file, save_analysis, combine_results, load_results_from_json
+from Services.GraghAnalyseService import Histogram, Pie_Chart, Bar_Chart, delete_old_images, Line_Graph
 
 app = FastAPI()
 app.mount("/GraghsPng", StaticFiles(directory="GraghsPng"), name="graphs")
+
 
 @app.get("/")
 async def root():
@@ -23,6 +22,7 @@ async def root():
 
 @app.post("/analyze")
 async def analyze(files: List[UploadFile] = File(...)):
+    delete_old_images("./GraghsPng")
     results = []
     for file in files:
         data = await file.read()
@@ -34,10 +34,11 @@ async def analyze(files: List[UploadFile] = File(...)):
     Histogram(combine["function_lengths"])
     Pie_Chart(combine, len(files))
     Bar_Chart(results)
+    Line_Graph(load_results_from_json())
 
     return JSONResponse(content={
         "message": "Analysis completed",
-        "view_graphs_url": "/show_graphs"
+        "view_graphs_url": 'http://127.0.0.1:8001/show_graphs'
     })
 
 
@@ -53,83 +54,91 @@ async def alerts(files: List[UploadFile] = File(...)):
 
 @app.get("/show_graphs", response_class=HTMLResponse)
 async def show_graphs():
+    timestamp = int(time.time())
     html_content = """
     <html>
-        <body>
-            <h1>Graphs</h1>
-            <img src="/GraghsPng/histogram.png" alt="Histogram" width="600"/><br/>
-            <img src="/GraghsPng/pie_chart.png" alt="Pie Chart" width="600"/><br/>
-            <img src="/GraghsPng/IssuesBarChart.png" alt="Line Graph" width="600"/>
-        </body>
-       <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f7f7f7;
-                text-align: center;
-                padding: 30px;
-                margin: 0;
-            }
-            h1 {
-                color: #333;
-                margin-bottom: 40px;
-            }
-            .graphs-container {
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-                flex-wrap: nowrap; /* לא מאפשר גלילה אופקית */
-                overflow-x: hidden;
-            }
-            .graph-item {
-                flex: 1 1 20%; /* כל תמונה תתאים עד כ-20% רוחב */
-                max-width: 22%; /* גודל מקסימלי לתמונה */
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .graph-item img {
-                width: 100%;
-                height: auto;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                border-radius: 10px;
-                user-select: none;
-            }
-            .download-btn {
-                margin-top: 10px;
-                background-color: #4CAF50;
-                border: none;
-                color: white;
-                padding: 8px 16px;
-                font-size: 14px;
-                border-radius: 5px;
-                cursor: pointer;
-                text-decoration: none;
-                display: inline-block;
-                transition: background-color 0.3s ease;
-            }
-            .download-btn:hover {
-                background-color: #45a049;
-            }
-        
-            /* למובייל: מציג 2 גרפים בשורה */
-            @media (max-width: 800px) {
-                .graphs-container {
-                    flex-wrap: wrap;
+        <head>
+            <style>
+                html, body {
+                    height: 100%;
+                    margin: 0;
+                    padding: 0;
+                    font-family: Arial, sans-serif;
+                    background-color: #f7f7f7;
+                    overflow: hidden;
+                }
+                h1 {
+                    color: #333;
+                    margin: 10px 0;
+                    text-align: center;
+                }
+                .grid-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    height: calc(100vh - 60px);
+                    gap: 10px;
+                    padding: 10px;
+                    box-sizing: border-box;
                 }
                 .graph-item {
-                    max-width: 45%;
-                    margin-bottom: 20px;
+                    position: relative;
+                    overflow: hidden;
+                    border-radius: 12px;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+                    background: white;
                 }
-            }
-            /* למובייל קטן: גרף אחד בשורה */
-            @media (max-width: 450px) {
-                .graph-item {
-                    max-width: 90%;
+                .graph-item img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    display: block;
                 }
-            }
-    </style>
+                .download-btn {
+                    position: absolute;
+                    bottom: 10px;
+                    right: 10px;
+                    background-color: rgba(76, 175, 80, 0.9);
+                    color: white;
+                    padding: 6px 12px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    text-decoration: none;
+                    transition: background-color 0.3s ease;
+                }
+                .download-btn:hover {
+                    background-color: rgba(56, 142, 60, 0.95);
+                }
 
+                @media (max-width: 768px) {
+                    .grid-container {
+                        grid-template-columns: 1fr;
+                        grid-template-rows: repeat(4, 1fr);
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <h1>All Graphs</h1>
+            <div class="grid-container">
+                <div class="graph-item">
+                    <img src="/GraghsPng/histogram.png?{timestamp}" alt="Histogram">
+                    <a href="/GraghsPng/histogram.png" download class="download-btn">הורד</a>
+                </div>
+                <div class="graph-item">
+                    <img src="/GraghsPng/pie_chart.png?{timestamp}" alt="Pie Chart">
+                    <a href="/GraghsPng/pie_chart.png" download class="download-btn">הורד</a>
+                </div>
+                <div class="graph-item">
+                    <img src="/GraghsPng/IssuesBarChart.png?{timestamp}" alt="Bar Chart">
+                    <a href="/GraghsPng/IssuesBarChart.png" download class="download-btn">הורד</a>
+                </div>
+                <div class="graph-item">
+                    <img src="/GraghsPng/line_graph.png?{timestamp}" alt="Line Graph">
+                    <a href="/GraghsPng/line_graph.png" download class="download-btn">הורד</a>
+                </div>
+            </div>
+        </body>
     </html>
     """
     return html_content
-

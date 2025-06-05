@@ -126,3 +126,11 @@ def save_analysis(result: FileAnalysisResult):
 
     with open("analysis_log.json", "w") as f:
         json.dump(data, f, indent=2)
+
+def load_results_from_json(path="analysis_log.json"):
+    try:
+        with open(path, "r") as f:
+            raw_data = json.load(f)
+        return [FileAnalysisResult(**d) for d in raw_data]
+    except FileNotFoundError:
+        return []

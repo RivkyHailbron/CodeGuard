@@ -4,24 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="add requirements.txt">
-      <change afterPath="$PROJECT_DIR$/Models/FileAnalysistResult.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/AnalysisService.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Services/grap_analyze_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/Fast_Api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Fast_Api.py" afterDir="false" />
-=======
     <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="analyze working&#10;post &quot;analyze&quot; all work!">
-      <change afterPath="$PROJECT_DIR$/Services/GraghAnalyseService.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/analysis_log.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Fast_Api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Fast_Api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/AnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AnalyseService.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis_log.json" beforeDir="false" />
->>>>>>> 6f85a5fd95d5162d431a9903c9cb532ec81f8b10
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/GraghAnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/GraghAnalyseService.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,33 +37,24 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-<<<<<<< HEAD
-    "Python.AnalysisService.executor": "Run",
-    "Python.Fast_Api.executor": "Run",
-=======
     "Python.GraghAnalyseService.executor": "Run",
->>>>>>> 6f85a5fd95d5162d431a9903c9cb532ec81f8b10
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
+    "last_opened_file_path": "C:/Users/user1/Desktop/wit",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-<<<<<<< HEAD
-      <recent name="C:\Users\user1\Desktop\נחמי תיכנות\יד\python+\final project\CodeGuard\Models" />
-      <recent name="C:\Users\user1\Desktop\נחמי תיכנות\יד\python+\final project\CodeGuard\Service" />
-=======
       <recent name="C:\Users\user1\Documents\לימודים\PYTHON\CodeGuard\GraghsPng" />
       <recent name="C:\Users\user1\Documents\לימודים\PYTHON\CodeGuard" />
       <recent name="C:\Users\user1\Documents\לימודים\PYTHON\CodeGuard\Services\GraghsPng" />
->>>>>>> 6f85a5fd95d5162d431a9903c9cb532ec81f8b10
     </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-1b1018131e27-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.180" />
+        <option value="bundled-python-sdk-d7ad00fb9fc3-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23726.102" />
       </set>
     </attachedChunks>
   </component>
