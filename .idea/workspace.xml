@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="analyze working&#10;post &quot;analyze&quot; all work!">
-      <change afterPath="$PROJECT_DIR$/analysis_log.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GraghsPng/line_graph.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Fast_Api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Fast_Api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/AnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AnalyseService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/GraghAnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/GraghAnalyseService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_log.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,15 +36,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.GraghAnalyseService.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
-    "last_opened_file_path": "C:/Users/user1/Desktop/wit",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.GraghAnalyseService.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user1/Desktop/wit&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user1\Documents\לימודים\PYTHON\CodeGuard\GraghsPng" />

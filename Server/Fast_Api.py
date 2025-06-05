@@ -9,6 +9,7 @@ from fastapi.responses import FileResponse, JSONResponse, HTMLResponse
 from pydantic import BaseModel
 
 from Services.AnalyseService import analyze_file, save_analysis, combine_results, load_results_from_json
+
 from Services.GraghAnalyseService import Histogram, Pie_Chart, Bar_Chart, delete_old_images, Line_Graph
 
 app = FastAPI()
@@ -38,7 +39,7 @@ async def analyze(files: List[UploadFile] = File(...)):
 
     return JSONResponse(content={
         "message": "Analysis completed",
-        "view_graphs_url": 'http://127.0.0.1:8001/show_graphs'
+        "view_graphs_url": f'http://127.0.0.1:8001/show_graphs'
     })
 
 
@@ -54,7 +55,7 @@ async def alerts(files: List[UploadFile] = File(...)):
 
 @app.get("/show_graphs", response_class=HTMLResponse)
 async def show_graphs():
-    timestamp = int(time.time())
+
     html_content = """
     <html>
         <head>
@@ -118,27 +119,27 @@ async def show_graphs():
                 }
             </style>
         </head>
-        <body>
-            <h1>All Graphs</h1>
-            <div class="grid-container">
-                <div class="graph-item">
-                    <img src="/GraghsPng/histogram.png?{timestamp}" alt="Histogram">
-                    <a href="/GraghsPng/histogram.png" download class="download-btn">הורד</a>
+         <body>
+                <h1>All Graphs</h1>
+                <div class="grid-container">
+                    <div class="graph-item">
+                        <img src="/GraghsPng/histogram.png" alt="Histogram">
+                        <a href="/GraghsPng/histogram.png" download class="download-btn">הורד</a>
+                    </div>
+                    <div class="graph-item">
+                        <img src="/GraghsPng/pie_chart.png" alt="Pie Chart">
+                        <a href="/GraghsPng/pie_chart.png" download class="download-btn">הורד</a>
+                    </div>
+                    <div class="graph-item">
+                        <img src="/GraghsPng/IssuesBarChart.png" alt="Bar Chart">
+                        <a href="/GraghsPng/IssuesBarChart.png" download class="download-btn">הורד</a>
+                    </div>
+                    <div class="graph-item">
+                        <img src="/GraghsPng/line_graph.png" alt="Line Graph">
+                        <a href="/GraghsPng/line_graph.png" download class="download-btn">הורד</a>
+                    </div>
                 </div>
-                <div class="graph-item">
-                    <img src="/GraghsPng/pie_chart.png?{timestamp}" alt="Pie Chart">
-                    <a href="/GraghsPng/pie_chart.png" download class="download-btn">הורד</a>
-                </div>
-                <div class="graph-item">
-                    <img src="/GraghsPng/IssuesBarChart.png?{timestamp}" alt="Bar Chart">
-                    <a href="/GraghsPng/IssuesBarChart.png" download class="download-btn">הורד</a>
-                </div>
-                <div class="graph-item">
-                    <img src="/GraghsPng/line_graph.png?{timestamp}" alt="Line Graph">
-                    <a href="/GraghsPng/line_graph.png" download class="download-btn">הורד</a>
-                </div>
-            </div>
-        </body>
+            </body>
     </html>
     """
     return html_content

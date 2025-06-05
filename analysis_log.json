@@ -17,34 +17,6 @@
     "missing_docstrings": 2
   },
   {
-    "file_name": "test_library.py",
-    "total_lines": 69,
-    "num_functions": 7,
-    "function_lengths": [
-      5,
-      6,
-      8,
-      5,
-      3,
-      11,
-      5
-    ],
-    "long_functions": 0,
-    "unused_vars": 0,
-    "missing_docstrings": 2
-  },
-  {
-    "file_name": "book.py",
-    "total_lines": 9,
-    "num_functions": 1,
-    "function_lengths": [
-      6
-    ],
-    "long_functions": 0,
-    "unused_vars": 0,
-    "missing_docstrings": 1
-  },
-  {
     "file_name": "library.py",
     "total_lines": 49,
     "num_functions": 6,
@@ -61,235 +33,6 @@
     "missing_docstrings": 6
   },
   {
-    "file_name": "AnalyseService.py",
-    "total_lines": 128,
-    "num_functions": 9,
-    "function_lengths": [
-      16,
-      89,
-      2,
-      2,
-      4,
-      2,
-      19,
-      16,
-      12
-    ],
-    "long_functions": 1,
-    "unused_vars": 1,
-    "missing_docstrings": 9
-  },
-  {
-    "file_name": "AnalyseService.py",
-    "total_lines": 128,
-    "num_functions": 9,
-    "function_lengths": [
-      16,
-      89,
-      2,
-      2,
-      4,
-      2,
-      19,
-      16,
-      12
-    ],
-    "long_functions": 1,
-    "unused_vars": 1,
-    "missing_docstrings": 9
-  },
-  {
-    "file_name": "GraghAnalyseService.py",
-    "total_lines": 69,
-    "num_functions": 4,
-    "function_lengths": [
-      7,
-      13,
-      12,
-      16
-    ],
-    "long_functions": 0,
-    "unused_vars": 1,
-    "missing_docstrings": 3
-  },
-  {
-    "file_name": "GraghAnalyseService.py",
-    "total_lines": 75,
-    "num_functions": 5,
-    "function_lengths": [
-      7,
-      13,
-      12,
-      16,
-      5
-    ],
-    "long_functions": 0,
-    "unused_vars": 1,
-    "missing_docstrings": 4
-  },
-  {
-    "file_name": "GraghAnalyseService.py",
-    "total_lines": 75,
-    "num_functions": 5,
-    "function_lengths": [
-      7,
-      13,
-      12,
-      16,
-      5
-    ],
-    "long_functions": 0,
-    "unused_vars": 1,
-    "missing_docstrings": 4
-  },
-  {
-    "file_name": "GraghAnalyseService.py",
-    "total_lines": 75,
-    "num_functions": 5,
-    "function_lengths": [
-      7,
-      13,
-      12,
-      16,
-      5
-    ],
-    "long_functions": 0,
-    "unused_vars": 1,
-    "missing_docstrings": 4
-  },
-  {
-    "file_name": "GraghAnalyseService.py",
-    "total_lines": 75,
-    "num_functions": 5,
-    "function_lengths": [
-      7,
-      13,
-      12,
-      16,
-      5
-    ],
-    "long_functions": 0,
-    "unused_vars": 1,
-    "missing_docstrings": 4
-  },
-  {
-    "file_name": "GraghAnalyseService.py",
-    "total_lines": 75,
-    "num_functions": 5,
-    "function_lengths": [
-      7,
-      13,
-      12,
-      16,
-      5
-    ],
-    "long_functions": 0,
-    "unused_vars": 1,
-    "missing_docstrings": 4
-  },
-  {
-    "file_name": "GraghAnalyseService.py",
-    "total_lines": 75,
-    "num_functions": 5,
-    "function_lengths": [
-      7,
-      13,
-      12,
-      16,
-      5
-    ],
-    "long_functions": 0,
-    "unused_vars": 1,
-    "missing_docstrings": 4
-  },
-  {
-    "file_name": "AnalyseService.py",
-    "total_lines": 128,
-    "num_functions": 9,
-    "function_lengths": [
-      16,
-      89,
-      2,
-      2,
-      4,
-      2,
-      19,
-      16,
-      12
-    ],
-    "long_functions": 1,
-    "unused_vars": 1,
-    "missing_docstrings": 9
-  },
-  {
-    "file_name": "GraghAnalyseService.py",
-    "total_lines": 75,
-    "num_functions": 5,
-    "function_lengths": [
-      7,
-      13,
-      12,
-      16,
-      5
-    ],
-    "long_functions": 0,
-    "unused_vars": 1,
-    "missing_docstrings": 4
-  },
-  {
-    "file_name": "AnalyseService.py",
-    "total_lines": 128,
-    "num_functions": 9,
-    "function_lengths": [
-      16,
-      89,
-      2,
-      2,
-      4,
-      2,
-      19,
-      16,
-      12
-    ],
-    "long_functions": 1,
-    "unused_vars": 1,
-    "missing_docstrings": 9
-  },
-  {
-    "file_name": "GraghAnalyseService.py",
-    "total_lines": 75,
-    "num_functions": 5,
-    "function_lengths": [
-      7,
-      13,
-      12,
-      16,
-      5
-    ],
-    "long_functions": 0,
-    "unused_vars": 1,
-    "missing_docstrings": 4
-  },
-  {
-    "file_name": "AnalyseService.py",
-    "total_lines": 128,
-    "num_functions": 9,
-    "function_lengths": [
-      16,
-      89,
-      2,
-      2,
-      4,
-      2,
-      19,
-      16,
-      12
-    ],
-    "long_functions": 1,
-    "unused_vars": 1,
-    "missing_docstrings": 9
-  },
-  {
     "file_name": "GraghAnalyseService.py",
     "total_lines": 85,
     "num_functions": 5,
@@ -302,7 +45,8 @@
     ],
     "long_functions": 1,
     "unused_vars": 1,
-    "missing_docstrings": 5
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T18:18:56.831878"
   },
   {
     "file_name": "AnalyseService.py",
@@ -322,6 +66,406 @@
     ],
     "long_functions": 1,
     "unused_vars": 1,
-    "missing_docstrings": 10
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T18:18:56.836460"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 85,
+    "num_functions": 5,
+    "function_lengths": [
+      7,
+      13,
+      12,
+      25,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T18:20:15.724452"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 85,
+    "num_functions": 5,
+    "function_lengths": [
+      7,
+      13,
+      12,
+      25,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T18:20:26.515147"
+  },
+  {
+    "file_name": "AnalyseService.py",
+    "total_lines": 136,
+    "num_functions": 10,
+    "function_lengths": [
+      16,
+      89,
+      2,
+      2,
+      4,
+      2,
+      19,
+      16,
+      12,
+      7
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T18:20:26.530651"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 85,
+    "num_functions": 6,
+    "function_lengths": [
+      2,
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 6,
+    "timestamp": "2025-06-05T18:55:21.770248"
+  },
+  {
+    "file_name": "AnalyseService.py",
+    "total_lines": 136,
+    "num_functions": 10,
+    "function_lengths": [
+      16,
+      89,
+      2,
+      2,
+      4,
+      2,
+      19,
+      16,
+      12,
+      7
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T18:55:21.774374"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 85,
+    "num_functions": 6,
+    "function_lengths": [
+      2,
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 6,
+    "timestamp": "2025-06-05T18:56:51.971891"
+  },
+  {
+    "file_name": "AnalyseService.py",
+    "total_lines": 136,
+    "num_functions": 10,
+    "function_lengths": [
+      16,
+      89,
+      2,
+      2,
+      4,
+      2,
+      19,
+      16,
+      12,
+      7
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T18:56:51.976491"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 81,
+    "num_functions": 5,
+    "function_lengths": [
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T19:04:16.807553"
+  },
+  {
+    "file_name": "AnalyseService.py",
+    "total_lines": 136,
+    "num_functions": 10,
+    "function_lengths": [
+      16,
+      89,
+      2,
+      2,
+      4,
+      2,
+      19,
+      16,
+      12,
+      7
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T19:04:16.815115"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 81,
+    "num_functions": 5,
+    "function_lengths": [
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T19:04:38.401161"
+  },
+  {
+    "file_name": "AnalyseService.py",
+    "total_lines": 136,
+    "num_functions": 10,
+    "function_lengths": [
+      16,
+      89,
+      2,
+      2,
+      4,
+      2,
+      19,
+      16,
+      12,
+      7
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T19:04:38.406993"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 81,
+    "num_functions": 5,
+    "function_lengths": [
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T19:04:55.032391"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 81,
+    "num_functions": 5,
+    "function_lengths": [
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T19:05:07.382133"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 81,
+    "num_functions": 5,
+    "function_lengths": [
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T19:05:23.254229"
+  },
+  {
+    "file_name": "AnalyseService.py",
+    "total_lines": 136,
+    "num_functions": 10,
+    "function_lengths": [
+      16,
+      89,
+      2,
+      2,
+      4,
+      2,
+      19,
+      16,
+      12,
+      7
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T19:05:23.275827"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 81,
+    "num_functions": 5,
+    "function_lengths": [
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T19:05:36.817100"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 81,
+    "num_functions": 5,
+    "function_lengths": [
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T19:16:32.857268"
+  },
+  {
+    "file_name": "AnalyseService.py",
+    "total_lines": 136,
+    "num_functions": 10,
+    "function_lengths": [
+      16,
+      89,
+      2,
+      2,
+      4,
+      2,
+      19,
+      16,
+      12,
+      7
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T19:16:32.879189"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 81,
+    "num_functions": 5,
+    "function_lengths": [
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T19:20:36.565628"
+  },
+  {
+    "file_name": "AnalyseService.py",
+    "total_lines": 136,
+    "num_functions": 10,
+    "function_lengths": [
+      16,
+      89,
+      2,
+      2,
+      4,
+      2,
+      19,
+      16,
+      12,
+      7
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T19:20:36.594256"
+  },
+  {
+    "file_name": "GraghAnalyseService.py",
+    "total_lines": 81,
+    "num_functions": 5,
+    "function_lengths": [
+      8,
+      14,
+      13,
+      22,
+      5
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 5,
+    "timestamp": "2025-06-05T19:35:12.432807"
+  },
+  {
+    "file_name": "AnalyseService.py",
+    "total_lines": 136,
+    "num_functions": 10,
+    "function_lengths": [
+      16,
+      89,
+      2,
+      2,
+      4,
+      2,
+      19,
+      16,
+      12,
+      7
+    ],
+    "long_functions": 1,
+    "unused_vars": 1,
+    "missing_docstrings": 10,
+    "timestamp": "2025-06-05T19:35:12.443132"
   }
 ]
