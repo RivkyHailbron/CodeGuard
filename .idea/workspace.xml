@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="GUI + STYLE + DOWNLOAD GRAPH">
+    <list default="true" id="956afc32-f5c3-4341-ab7a-4a7c14684ef3" name="Changes" comment="BONUS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" beforeDir="false" afterPath="$PROJECT_DIR$/Models/FileAnanyzerResult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraghsPng/IssuesBarChart.png" beforeDir="false" afterPath="$PROJECT_DIR$/GraghsPng/IssuesBarChart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraghsPng/histogram.png" beforeDir="false" afterPath="$PROJECT_DIR$/GraghsPng/histogram.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GraghsPng/pie_chart.png" beforeDir="false" afterPath="$PROJECT_DIR$/GraghsPng/pie_chart.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/Fast_Api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Server/Fast_Api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/AnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/AnalyseService.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/GraghAnalyseService.py" beforeDir="false" afterPath="$PROJECT_DIR$/Services/GraghAnalyseService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_log.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,14 +37,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.GraghAnalyseService.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.GraghAnalyseService.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/user1/Documents/pythonProject/Wit",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user1\Documents\לימודים\PYTHON\CodeGuard\GraghsPng" />
@@ -146,7 +149,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1749038534766</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎-00011" summary="BONUS">
+      <option name="closed" value="true" />
+      <created>1749039647313</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL‎-00011" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1749039647313</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -155,6 +166,7 @@
     <MESSAGE value="add requirements.txt" />
     <MESSAGE value="analyze + alerts + GUI works" />
     <MESSAGE value="GUI + STYLE + DOWNLOAD GRAPH" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI + STYLE + DOWNLOAD GRAPH" />
+    <MESSAGE value="BONUS" />
+    <option name="LAST_COMMIT_MESSAGE" value="BONUS" />
   </component>
 </project>

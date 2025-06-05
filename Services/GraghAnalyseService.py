@@ -37,7 +37,6 @@ def Pie_Chart(results: dict, num_files: int):
 def Bar_Chart(list_of_results: List[FileAnalysisResult]):
     filenames  = [file.file_name for file in list_of_results]
     issues = [res.long_functions + res.missing_docstrings + res.unused_vars + (res.total_lines>200) for res in list_of_results ]
-
     plt.bar(filenames, issues, color='orange')
     plt.title('Total Issues Per File')
     plt.xlabel('File Name')

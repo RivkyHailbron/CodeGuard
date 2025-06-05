@@ -34,7 +34,7 @@ async def analyze(files: List[UploadFile] = File(...)):
 
     return JSONResponse(content={
         "message": "Analysis completed",
-        "view_graphs_url": "/show_graphs"
+        "view_graphs_url": 'http://127.0.0.1:8001/show_graphs'
     })
 
 
